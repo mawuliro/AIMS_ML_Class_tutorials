@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Charger les données
+data = np.loadtxt('spectrum28.txt')  # ou depuis votre source
+time = data[:, 0]     # Première colonne
+amplitude1 = data[:, 1]  # Deuxième colonne  
+amplitude2 = data[:, 2]  # Troisième colonne
+
+# Visualisation
+plt.figure(figsize=(12, 6))
+plt.subplot(2, 1, 1)
+plt.plot(time, amplitude1, 'b-', label='Amplitude 1')
+plt.ylabel('Amplitude 1')
+plt.grid(True)
+
+plt.subplot(2, 1, 2) 
+plt.plot(time, amplitude2, 'r-', label='Amplitude 2')
+plt.xlabel('Temps')
+plt.ylabel('Amplitude 2')
+plt.grid(True)
+plt.show()
